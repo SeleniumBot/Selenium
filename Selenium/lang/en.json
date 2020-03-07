@@ -6,16 +6,16 @@
     } 
   },
   "info": {
-    "ping": "{E} Current bot ping is `{0}`",
-    "snapshot": "{E} The current snapshot version is `{0}`"
+    "ping": "{E} Current bot ping is `{0}`.",
+    "snapshot": "{E} The current snapshot version is `{0}`."
   },
   "settings": {
     "language": {
-      "invalid": "{E} Invalid language `{0}`",
-      "set": "{E} Set language to `{0}`"
+      "invalid": "{E} Invalid language `{0}`.",
+      "set": "{E} Set language to `{0}`."
     },
     "prefix": {
-      "set": "{E} Prefix set to `{0}`"
+      "set": "{E} Prefix set to `{0}`."
     }
   }
 }
