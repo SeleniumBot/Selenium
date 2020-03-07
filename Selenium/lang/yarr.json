@@ -9,7 +9,7 @@
         }
     },
     "info": {
-        "ping": "{E} Yer current bot ping be `{0}`",
-        "snapshot": "{E} The current snap be `{0}`"
+        "ping": "{E} Yer curren' bot ping be `{0}`",
+        "snapshot": "{E} The curren' snapshot version be `{0}`"
     }
 }
