@@ -62,12 +62,19 @@ namespace Selenium
 
             var token = (string)language.SelectToken(key);
 
+            // disable resharper heuristic here because it is actually reachable,
+            // just doesn't realise it.
+
+            // ReSharper disable HeuristicUnreachableCode
             return token switch
             {
                 "" when lang == "en" => key,
+                null when lang == "en" => key,
                 "" => GetLocalization(key, "en"),
+                null => GetLocalization(key, "en"),
                 _ => token
             };
+            // ReSharper restore HeuristicUnreachableCode
         }
 
         /**
