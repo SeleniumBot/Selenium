@@ -2,6 +2,14 @@
     "settings": {
         "prefix": {
             "set": "{E} O prefixo foi mudado para `{0}`"
+        },
+        "language": {
+            "invalid": "",
+            "set": ""
         }
+    },
+    "info": {
+        "ping": "",
+        "snapshot": ""
     }
 }
