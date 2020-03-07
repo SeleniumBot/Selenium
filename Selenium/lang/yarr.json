@@ -1,1 +1,15 @@
-﻿{}
+{
+    "settings": {
+        "prefix": {
+            "set": "{E} Yarr! Prefix be set to `{0}`"
+        },
+        "language": {
+            "invalid": "{E} Arrgh, `{0}` language be not existin'",
+            "set": "{E} Yarr! Language be set to `{0}`"
+        }
+    },
+    "info": {
+        "ping": "{E} Yer current bot ping be `{0}`",
+        "snapshot": "{E} The current snap be `{0}`"
+    }
+}
