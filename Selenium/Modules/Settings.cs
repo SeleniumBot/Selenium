@@ -23,17 +23,6 @@ namespace Selenium.Modules
             await Reply(_("settings.prefix.set", Constants.SuccessEmoji, prefix));
         }
 
-        [Command("lang"), Alias("language"), Summary("Lists all languages available")]
-        public async Task Language()
-        {
-            await Reply(_("settings.language.list", Constants.InfoEmoji,
-                string.Join(", ", 
-                    LocalizationProvider.Instance.LanguageCodes
-                        .Select(obj => $"`{obj}`")
-                        .ToArray()))
-                );
-        }
-
         [Command("lang"), Alias("language"), Summary("Set the server language")]
         public async Task Language(
             [Summary("The language")] string langCode)
@@ -49,6 +38,17 @@ namespace Selenium.Modules
             await Database.SetSettings(Context.Guild.Id, settings);
 
             await Reply(_("settings.language.set", Constants.SuccessEmoji, langCode));
+        }
+
+        [Command("lang"), Alias("language"), Summary("Lists all languages available")]
+        public async Task Language()
+        {
+            await Reply(_("settings.language.list", Constants.InfoEmoji,
+                string.Join(", ", 
+                    LocalizationProvider.Instance.LanguageCodes
+                        .Select(obj => $"`{obj}`")
+                        .ToArray()))
+                );
         }
 
         [Command("automod"), Summary("Automod settings")]
