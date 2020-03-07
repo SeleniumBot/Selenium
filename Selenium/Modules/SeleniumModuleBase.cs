@@ -17,22 +17,15 @@ namespace Selenium.Modules
             RequestOptions options = null)
             => ReplyAsync(message, isTTS, embed, options);
 
-        /**
-         * Function for localizing strings
-         */
 #nullable enable
         public string _(string key, string? emoji = null, params object?[] formatting)
 #nullable disable
         {
-            // TODO: fix this somehow
-            var settings = Database.Instance.GetSettings(Context.Guild.Id).GetAwaiter().GetResult();
-            var trueInput = LocalizationProvider.Instance.GetLocalization(key, settings.Language);
-            if (emoji != null)
-            {
-                trueInput = trueInput.Replace("{E}", emoji);
-            }
+            // TODO: improve
+            var lang = Database.Instance.GetSettings(Context.Guild.Id)
+                .GetAwaiter().GetResult().Language;
 
-            return string.Format(trueInput, formatting);
+            return LocalizationProvider.Instance._(key, lang, emoji, formatting);
         }
     }
 }

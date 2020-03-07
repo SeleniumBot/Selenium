@@ -177,7 +177,12 @@ namespace Selenium
             var result = await _commands.ExecuteAsync(ctx, argPos, _services);
 
             if (!result.IsSuccess && result.ErrorReason != "Unknown command.")
-                await ctx.Channel.SendMessageAsync($"{Constants.ErrorEmoji} An error occurred during execution of the command. `{result.ErrorReason}`\n{Constants.InfoEmoji} You may just need to consult the documentation.");
+                await ctx.Channel.SendMessageAsync(
+                    LocalizationProvider.Instance._("bot.error.errorOccurred", guildSettings.Language,
+                        Constants.ErrorEmoji, result.ErrorReason)
+                    + "\n"
+                    + LocalizationProvider.Instance._("bot.error.docs", guildSettings.Language,
+                        Constants.InfoEmoji, "notarealdomain://selenium.bot/docs/"));
         }
     }
 }

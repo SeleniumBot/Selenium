@@ -69,5 +69,21 @@ namespace Selenium
                 _ => (string) token
             };
         }
+
+        /**
+ * Function for localizing strings
+ */
+#nullable enable
+        public string _(string key, string lang, string? emoji = null, params object?[] formatting)
+#nullable disable
+        {
+            var trueInput = Instance.GetLocalization(key, lang);
+            if (emoji != null)
+            {
+                trueInput = trueInput.Replace("{E}", emoji);
+            }
+
+            return string.Format(trueInput, formatting);
+        }
     }
 }

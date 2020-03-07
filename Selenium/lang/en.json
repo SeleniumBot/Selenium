@@ -1,7 +1,13 @@
 ﻿{
+  "bot": {
+    "error": {
+      "errorOccurred":  "{E} An error occurred during execution of the command. `{1}`" ,
+      "docs": "{E} You may just need to consult the documentation. Go to {1} to learn more."
+    } 
+  },
   "info": {
     "ping": "{E} Current bot ping is `{0}`",
-    "snapshot":  "{E} The current snapshot version is `{0}`" 
+    "snapshot": "{E} The current snapshot version is `{0}`"
   },
   "settings": {
     "language": {
