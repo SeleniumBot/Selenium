@@ -1,8 +1,8 @@
 ﻿{
   "bot": {
     "error": {
-      "errorOccurred":  "{E} An error occurred during execution of the command. `{1}`" ,
-      "docs": "{E} You may just need to consult the documentation. Go to {1} to learn more."
+      "errorOccurred":  "{E} An error occurred during execution of the command. `{0}`" ,
+      "docs": "{E} You may just need to consult the documentation. Go to {0} to learn more."
     } 
   },
   "info": {

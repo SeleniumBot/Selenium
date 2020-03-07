@@ -60,19 +60,19 @@ namespace Selenium
 
             var language = _languages[lang];
 
-            var token = language.SelectToken(key);
+            var token = (string)language.SelectToken(key);
 
-            return (string)token switch
+            return token switch
             {
                 "" when lang == "en" => key,
                 "" => GetLocalization(key, "en"),
-                _ => (string) token
+                _ => token
             };
         }
 
         /**
- * Function for localizing strings
- */
+        * Function for localizing strings
+        */
 #nullable enable
         public string _(string key, string lang, string? emoji = null, params object?[] formatting)
 #nullable disable
