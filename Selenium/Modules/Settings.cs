@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 // ReSharper disable UnusedMember.Global
@@ -22,7 +23,18 @@ namespace Selenium.Modules
             await Reply(_("settings.prefix.set", Constants.SuccessEmoji, prefix));
         }
 
-        [Command("lang"), Summary("Set the server language")]
+        [Command("lang"), Alias("language"), Summary("Lists all languages available")]
+        public async Task Language()
+        {
+            await Reply(_("settings.language.list", Constants.InfoEmoji,
+                string.Join(", ", 
+                    LocalizationProvider.Instance.LanguageCodes
+                        .Select(obj => $"`{obj}`")
+                        .ToArray()))
+                );
+        }
+
+        [Command("lang"), Alias("language"), Summary("Set the server language")]
         public async Task Language(
             [Summary("The language")] string langCode)
         {

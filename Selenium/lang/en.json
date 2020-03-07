@@ -1,7 +1,7 @@
 ﻿{
   "bot": {
     "error": {
-      "errorOccurred":  "{E} An error occurred during execution of the command. `{0}`" ,
+      "errorOccurred": "{E} An error occurred during execution of the command. `{0}`" ,
       "docs": "{E} You may just need to consult the documentation. Go to {0} to learn more."
     } 
   },
@@ -12,6 +12,7 @@
   },
   "settings": {
     "language": {
+      "list": "{E} The following languages are available:\n{0}", 
       "invalid": "{E} Invalid language `{0}`.",
       "set": "{E} Set language to `{0}`."
     },

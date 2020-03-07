@@ -17,6 +17,8 @@ namespace Selenium
             _instance ??= new LocalizationProvider();
         #endregion
 
+        public readonly List<string> LanguageCodes = new List<string>();
+
         private readonly Dictionary<string, JObject> _languages
             = new Dictionary<string, JObject>();
 
@@ -27,36 +29,56 @@ namespace Selenium
             var languages = Directory.GetFiles(langDir);
             foreach (var language in languages)
             {
-                var path = Path.Combine(langDir, language);
                 var languageCode = Path.GetFileNameWithoutExtension(language);
 
-                Bot.Logger.Debug("Loading language {LangCode}", languageCode);
-
-                var jsonData = File.ReadAllText(path);
-
-                JObject obj;
-
-                try
-                {
-                    obj = JObject.Parse(jsonData);
-                }
-                catch (JsonReaderException e)
-                {
-                    Bot.Logger.Warning(e, "Failed to load language {Lang}", language);
-                    continue;
-                }
-
-                _languages[languageCode] = obj;
+                LanguageCodes.Add(languageCode);
             }
+
+            LoadLanguage("en");
         }
 
         public bool IsLanguageValid(string langCode)
-            => _languages.ContainsKey(langCode);
+            => LanguageCodes.Contains(langCode);
+
+        // dynamically load languages that are actually used to save memory
+        public void LoadLanguage(string code)
+        {
+            if (!IsLanguageValid(code))
+            {
+                Bot.Logger.Warning("Attempted to load non-existent language {Code}", code);
+                return;
+            }
+
+            var lang = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "lang", code + ".json");
+
+            Bot.Logger.Debug("Loading language {LangCode}", code);
+
+            var jsonData = File.ReadAllText(lang);
+
+            JObject obj;
+
+            try
+            {
+                obj = JObject.Parse(jsonData);
+            }
+            catch (JsonReaderException e)
+            {
+                Bot.Logger.Warning(e, "Failed to load language {Lang}", lang);
+                return;
+            }
+
+            _languages[code] = obj;
+        }
 
         public string GetLocalization(string key, string lang)
         {
             if (!_languages.ContainsKey(lang))
-                lang = "en"; // fall back to english
+            {
+                if (IsLanguageValid(lang))
+                    LoadLanguage(lang);
+                else
+                    lang = "en"; // fall back to english
+            }
 
             var language = _languages[lang];
 
