@@ -62,10 +62,10 @@ namespace Selenium
 
             var token = language.SelectToken(key);
 
-            return token switch
+            return (string)token switch
             {
-                null when lang == "en" => key,
-                null => GetLocalization(key, "en"),
+                "" when lang == "en" => key,
+                "" => GetLocalization(key, "en"),
                 _ => (string) token
             };
         }

@@ -10,7 +10,7 @@ namespace Selenium.Modules
 
         [Command("ping"), Alias("latency"), Summary("Returns latency to Discord.")]
         public Task Ping()
-            => Reply(_("info.ping", Constants.ClockEmoji, Context.Client.Latency));
+            => Reply(_("info.ping", Constants.ClockEmoji, Context.Client.Latency + "ms"));
 
         [Command("version"), Summary("Gets the snapshot version of Selenium.")]
         public Task Version()
