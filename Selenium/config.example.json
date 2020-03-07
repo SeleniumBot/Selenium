@@ -1,0 +1,6 @@
+﻿{
+  // The bot token
+  "token": "",
+  // The snapshot version used in the bot
+  "snapshot": ""
+}
