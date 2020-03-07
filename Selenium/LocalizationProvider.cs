@@ -84,13 +84,20 @@ namespace Selenium
         public string _(string key, string lang, string? emoji = null, params object?[] formatting)
 #nullable disable
         {
-            var trueInput = Instance.GetLocalization(key, lang);
-            if (emoji != null)
+            try
             {
-                trueInput = trueInput.Replace("{E}", emoji);
-            }
+                var trueInput = Instance.GetLocalization(key, lang);
+                if (emoji != null)
+                {
+                    trueInput = trueInput.Replace("{E}", emoji);
+                }
 
-            return string.Format(trueInput, formatting);
+                return string.Format(trueInput, formatting);
+            }
+            catch (Exception e)
+            {
+                return $"{Constants.ErrorEmoji} Failed to localize `{key}` in language `{lang}`: ```{e}```";
+            }
         }
     }
 }
