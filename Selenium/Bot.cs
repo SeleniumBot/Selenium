@@ -94,8 +94,7 @@ namespace Selenium
 
             _client = new DiscordShardedClient(new DiscordSocketConfig
             {
-                LogLevel = LogSeverity.Verbose,
-                TotalShards = 1
+                LogLevel = LogSeverity.Verbose
             });
 
             _commands = new CommandService(new CommandServiceConfig
@@ -138,7 +137,14 @@ namespace Selenium
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
 
             await _client.LoginAsync(TokenType.Bot, config.Token);
+
             await _client.StartAsync();
+
+            _client.ShardDisconnected += async (e, shard) =>
+            {
+                Log.Warning(e, "Shard {Id} disconnected.", shard.ShardId);
+                await shard.StartAsync();
+            };
 
             await Task.Delay(-1);
 

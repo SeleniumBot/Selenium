@@ -15,5 +15,9 @@ namespace Selenium.Modules
         [Command("version"), Summary("Gets the snapshot version of Selenium.")]
         public Task Version()
             => Reply(_("info.snapshot", Constants.InfoEmoji, Config.Snapshot));
+
+        [Command("shard"), Summary("Gets the shard ID for the guild.")]
+        public Task Shard()
+            => Reply(_("info.shard", Constants.InfoEmoji, Context.Client.GetShardIdFor(Context.Guild)));
     }
 }

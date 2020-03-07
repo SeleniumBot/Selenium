@@ -7,6 +7,7 @@
   },
   "info": {
     "ping": "{E} Current bot ping is `{0}`.",
+    "shard":  "{E} This guild is on shard ID `{0}`.", 
     "snapshot": "{E} The current snapshot version is `{0}`."
   },
   "settings": {
