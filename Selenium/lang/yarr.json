@@ -1,15 +1,21 @@
 {
     "settings": {
         "prefix": {
-            "set": "{E} Yarr! Prefix be set to `{0}`"
+            "set": "{E} Yarr! Prefix be set to `{0}`."
         },
         "language": {
-            "invalid": "{E} Arrgh, `{0}` language be not existin'",
-            "set": "{E} Yarr! Language be set to `{0}`"
+            "invalid": "{E} Arrgh, `{0}` language be not existin'.",
+            "set": "{E} Yarr! Language be set to `{0}`."
         }
     },
     "info": {
-        "ping": "{E} Yer curren' bot ping be `{0}`",
-        "snapshot": "{E} The curren' snapshot version be `{0}`"
+        "ping": "{E} Yer curren' bot ping be `{0}`.",
+        "snapshot": "{E} The curren' snapshot version be `{0}`."
+    },
+    "bot": {
+        "error": {
+            "errorOccurred": "",
+            "docs": ""
+        }
     }
 }
