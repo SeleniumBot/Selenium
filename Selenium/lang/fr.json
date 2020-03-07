@@ -1,15 +1,21 @@
 {
     "settings": {
         "prefix": {
-            "set": "{E} Le préfixe a été fixé à `{0}`"
+            "set": "{E} Le préfixe a été fixé à `{0}`."
         },
         "language": {
-            "invalid": "{E} Langue invalide `{0}`",
-            "set": "{E} Le langue a été fixé à `{0}`"
+            "invalid": "{E} Langue invalide `{0}`.",
+            "set": "{E} Le langue a été fixé à `{0}`."
         }
     },
     "info": {
-        "ping": "{E} Le ping actuel est `{0}`",
-        "snapshot": "{E} La version-snapshot actuelle est `{0}`"
+        "ping": "{E} Le ping actuel est `{0}`.",
+        "snapshot": "{E} La version-snapshot actuelle est `{0}`."
+    },
+    "bot": {
+        "error": {
+            "errorOccurred": "",
+            "docs": ""
+        }
     }
 }
