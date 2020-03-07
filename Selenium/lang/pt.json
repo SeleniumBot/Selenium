@@ -1,15 +1,21 @@
 {
     "settings": {
         "prefix": {
-            "set": "{E} O prefixo foi mudado para `{0}`"
+            "set": "{E} O prefixo foi mudado para `{0}`."
         },
         "language": {
-            "invalid": "",
-            "set": ""
+            "invalid": "{E} A língua `{0}` não foi reconhecida.",
+            "set": "{E} A língua foi mudada para `{0}`."
         }
     },
     "info": {
-        "ping": "",
-        "snapshot": ""
+        "ping": "{E} O ping do bot é atualmente `{0}`.",
+        "snapshot": "{E} A versão snapshot atual é `{0}`."
+    },
+    "bot": {
+        "error": {
+            "errorOccurred": "{E} Um erro ocorreu durante a execução do comando `{0}`.",
+            "docs": "{E} Talvez você precisa somente de consultar a documentação. Veja mais com {0}."
+        }
     }
 }
