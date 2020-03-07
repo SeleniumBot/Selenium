@@ -1,1 +1,15 @@
-﻿{}
+{
+    "settings": {
+        "prefix": {
+            "set": ""
+        },
+        "language": {
+            "invalid": "",
+            "set": ""
+        }
+    },
+    "info": {
+        "ping": "",
+        "snapshot": ""
+    }
+}
