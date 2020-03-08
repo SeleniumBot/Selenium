@@ -27,7 +27,6 @@
       "unstrike": "unstriked",
       "ban": "banned",
       "unban": "unbanned",
-      "tempban": "tempbanned",
       "softban": "softbanned",
       "kick": "kicked"
     },
