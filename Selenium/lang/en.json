@@ -12,12 +12,24 @@
   },
   "settings": {
     "language": {
-      "list": "{E} The following languages are available:\n{0}", 
+      "list": "{E} The following languages are available:\n{0}",
       "invalid": "{E} Invalid language `{0}`.",
       "set": "{E} Set language to `{0}`."
     },
     "prefix": {
       "set": "{E} Prefix set to `{0}`."
     }
-  }
+  },
+  "moderation": {
+    "modlog": "`[{0}]` {1} {E} {2} {3} {4} (ID: {5})\n`[ Reason ]` {6}",
+    "types": {
+      "strike": "striked",
+      "unstrike": "unstriked",
+      "ban": "banned",
+      "unban": "unbanned",
+      "tempban": "tempbanned",
+      "softban": "softbanned",
+      "kick": "kicked"
+    } 
+  } 
 }
