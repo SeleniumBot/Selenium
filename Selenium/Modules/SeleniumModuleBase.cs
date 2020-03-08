@@ -27,5 +27,26 @@ namespace Selenium.Modules
 
             return LocalizationProvider.Instance._(key, lang, emoji, formatting);
         }
+
+        public string Modlog(SocketUser moderator, SocketUser punished, string method, string emoji, 
+            string reason, int caseId, TimeSpan length = default)
+        {
+            var lengthStr = "";
+
+            if (length != default)
+            {
+                lengthStr = _("moderation.timespan", formatting: length.ToString(@"d\dhh\hmm\m"));
+            }
+
+            return _("moderation.modlog", emoji, 
+                DateTime.UtcNow.ToString("HH:mm:ss"),
+                caseId,
+                $"**{moderator.Username}**#{moderator.Discriminator}",
+                _($"moderation.types.{method}"),
+                $"**{punished.Username}**#{punished.Discriminator}",
+                punished.Id,
+                lengthStr,
+                reason);
+        }
     }
 }

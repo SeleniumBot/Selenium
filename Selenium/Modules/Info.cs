@@ -1,5 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Discord.Commands;
+using Discord.WebSocket;
+
 // ReSharper disable UnusedMember.Global
 
 namespace Selenium.Modules
@@ -19,5 +22,10 @@ namespace Selenium.Modules
         [Command("shard"), Summary("Gets the shard ID for the guild.")]
         public Task Shard()
             => Reply(_("info.shard", Constants.InfoEmoji, Context.Client.GetShardIdFor(Context.Guild)));
+
+        [Command("testmodlog")]
+        public Task TestModlog(SocketUser victim, int id, TimeSpan length,
+            [Remainder] string reason)
+            => Reply(Modlog(Context.User, victim, "ban", Constants.BanEmoji, reason, id, length));
     }
 }
