@@ -21,7 +21,7 @@
     }
   },
   "moderation": {
-    "modlog": "`[{0}]` {1} {E} {2} {3} {4} (ID: {5})\n`[ Reason ]` {6}",
+    "modlog": "`[{0}]` `[{1}]` {E} {2} {3} {4} (ID: {5})\n`[ Reason ]` {6}",
     "types": {
       "strike": "striked",
       "unstrike": "unstriked",
