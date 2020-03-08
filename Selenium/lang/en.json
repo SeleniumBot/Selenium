@@ -30,6 +30,7 @@
       "tempban": "tempbanned",
       "softban": "softbanned",
       "kick": "kicked"
-    } 
+    },
+    "timespan": "for {0}" 
   } 
 }
