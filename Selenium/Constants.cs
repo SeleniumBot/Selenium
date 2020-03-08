@@ -14,6 +14,9 @@
 
         public const string StrikeEmoji = "<:seStrike:684778617317883951>";
         public const string UnstrikeEmoji = "<:seUnstrike:684778617368346645> ";
+        public const string KickEmoji = "<:seKick:686254849565786245> ";
+        public const string BanEmoji = "<:seBan:684778617414484035> ";
+        public const string UnbanEmoji = "<:seUnban:684778617531662357> ";
 
         public const string AutomodEmoji = "<:seAutomod:684778617288523818>";
     }
