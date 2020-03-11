@@ -5,17 +5,31 @@
         },
         "language": {
             "invalid": "{E} A língua `{0}` não foi reconhecida.",
-            "set": "{E} A língua foi mudada para `{0}`."
+            "set": "{E} A língua foi mudada para `{0}`.",
+            "list": "{E} Estas linguas estão disponíveis:\n{0}"
         }
     },
     "info": {
         "ping": "{E} O ping do bot é atualmente `{0}`.",
-        "snapshot": "{E} A versão snapshot atual é `{0}`."
+        "snapshot": "{E} A versão snapshot atual é `{0}`.",
+        "shard": "{E} Este servidor esta no Shard com ID `{0}`."
     },
     "bot": {
         "error": {
             "errorOccurred": "{E} Um erro ocorreu durante a execução do comando `{0}`.",
             "docs": "{E} Talvez você precisa somente de consultar a documentação. Veja mais com {0}."
         }
+    },
+    "moderation": {
+        "modlog": "`[{0}]` `[{1}]` {E} {2} {3} {4} (ID: {5}) {6}\n`[  Razão   ]` {7}",
+        "types": {
+            "strike": "avisado",
+            "unstrike": "desculpado",
+            "ban": "banido",
+            "unban": "",
+            "softban": "",
+            "kick": ""
+        },
+        "timespan": "por {0}"
     }
 }
